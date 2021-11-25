@@ -1,27 +1,118 @@
 from tkinter import *
+from tkinter import messagebox
 import random as r
 import time as t
 import gc as g
+from keyboard import *
 
 #TODO:list of questions and asnwers
 #TODO:screen deleting system
-#TODO:progress bar
-#TODO:zabezpieczenie od złych odpowiedzi
 #TODO:zadania do zdobycia kodów
-#TODO:sprawdzanie czy jest dobra czy zła odp
+#TODO:cheat codes trzeba dokończyć właściwymi kodami
+#TODO: progress bar można zrobić na tablicy booleanów true false tak jak erastotenesa
+#KUCHNIA:
+#podaj nazwę przedmiotu na kuchni (ale takie trudne rzeczy)
+#
+#
 
+#wieko kurczaka
+#
+#
+
+#
+#
+#
+
+#SERWIS:
+#pierwsza rzecz to opisanie krok po kroku robienia różnych kanapek według standardu razem z gramaturą
+#
+#
+
+#pod mejkiem
+#
+#
+
+#okap od frytki ta taka szufladka
+#
+#
+
+#KASA:
+#podanie przynajmniej 5 pozycji na każdej wartości staffa (ale tylko 3-6 zł bez bsmartów)
+#
+#
+
+#odwinąć od środka lodówkę od napojów
+#na czarnej rurze pod refilem
+#
+
+#za sercem kawiarki
+#za którąś drukarką od paragonów
+#
+
+#EXTRA
+#w pojemniku na fusy
+#za refilem na sali
+#za refilem na dt
+#
+#
+#
+#
+#
+#
+#
+#
+
+#extra points audyt simulations
+
+def czeatcode(ans):
+    key = int(ans)
+    cheatfoh={69420:"Miej serce i patrzaj sercem",2:"",3:"",4:"",5:"",6:"",7:"",8:"",9:""}
+    cheatsoh={1:"",2:"",3:"",4:"",5:"",6:"",7:"",8:"",9:""}
+    cheatkoh={1:"",2:"",3:"",4:"",5:"",6:"",7:"",8:"",9:""}
+    messagebox.showinfo("CHEAT  ENABLED", cheatfoh[key])
 
 def check(ans):
-    odpofoh={'1':"nm04n",'2':"dew91",'3':"c4x7o",'4':"98zlh",'5':"lx5c8",'6':"4n6lf",'7':"mr5l2",'8':"08tri",'9':"oil52"}
-    odposoh={'1':"h2ut3",'2':"6rj3i",'3':"y3r3i",'4':"ba21m",'5':"2apt5",'6':"r04uy",'7':"7vl7g",'8':"1j8yc",'9':"z7t8i"}
-    odpokoh={'1':"8kv2i",'2':"b30jb",'3':"8in3t",'4':"jxt28",'5':"jv6u7",'6':"3gl1j",'7':"a9m3v",'8':"kng56",'9':"41elr"}
-    pass
+    odpofoh={1:"nm04n",2:"dew91",3:"c4x7o",4:"98zlh",5:"lx5c8",6:"4n6lf",7:"mr5l2",8:"08tri",9:"oil52"}
+    odposoh={1:"h2ut3",2:"6rj3i",3:"y3r3i",4:"ba21m",5:"2apt5",6:"r04uy",7:"7vl7g",8:"1j8yc",9:"z7t8i"}
+    odpokoh={1:"8kv2i",2:"b30jb",3:"8in3t",4:"jxt28",5:"jv6u7",6:"3gl1j",7:"a9m3v",8:"kng56",9:"41elr"}
+    cheatcodefoh={1:"69420",2:"42069",3:"x",4:"x",5:"x",6:"x",7:"x",8:"x",9:"x"}
+    cheatcodesoh={1:"69420",2:"42069",3:"x",4:"x",5:"x",6:"x",7:"x",8:"x",9:"x"}
+    cheatcodekoh={1:"69420",2:"42069",3:"x",4:"x",5:"x",6:"x",7:"x",8:"x",9:"x"}
+    for i in range(1,10):
+        if odpofoh[i] == ans.lower():
+            correct(i)
+            break
+        elif cheatcodefoh[i] == ans:
+            czeatcode(ans)
+            break
+        else:
+            i += 1
+    if i == 10:
+        wrong()
 
-def correct():
-    pass
+
+def correct(x):
+    if x == 1:
+        question_label_1_U.destroy()
+    elif x == 2:
+        question_label_2_U.destroy()
+    elif x == 3:
+        question_label_3_U.destroy()
+    elif x == 4:
+        question_label_4_U.destroy()
+    elif x == 5:
+        question_label_5_U.destroy()
+    elif x == 6:
+        question_label_6_U.destroy()
+    elif x == 7:
+        question_label_7_U.destroy()
+    elif x == 8:
+        question_label_8_U.destroy()
+    elif x == 9:
+        question_label_9_U.destroy()
 
 def wrong():
-    pass
+    messagebox.showinfo("WRONG", "Wprowadzono niewłaściwy kod")
 
 def main():
     global root
@@ -29,10 +120,61 @@ def main():
     root.attributes('-fullscreen', True)
     background_Label = Label(root, bg="grey").place(x=0, y=0, relwidth=1, relheight=1)
 
+    global question_label_1_U, question_label_2_U, question_label_3_U, question_label_4_U, question_label_5_U, question_label_6_U, question_label_7_U, question_label_8_U, question_label_9_U
+    # 1
+    question_label_1_U = Label(root, bg="blue", fg="black",font=("Courier", 50, 'bold') ,text="sike")
+    question_label_1_U.place(relx=0.12,rely=0.1,relwidth=0.2,relheight=0.1)
+    question_label_1 = Button(root, bg="blue", fg="black",font=("Courier", 50, 'bold') ,text="1", command= lambda : question_label_1.destroy())
+    question_label_1.place(relx=0.12,rely=0.1,relwidth=0.2,relheight=0.1)
+
+    # 2
+    question_label_2_U = Label(root, bg="blue", fg="black", font=("Courier", 50, 'bold'), text="sike")
+    question_label_2_U.place(relx=0.12, rely=0.25, relwidth=0.2, relheight=0.1)
+    question_label_2 = Button(root, bg="blue", fg="black", font=("Courier", 50, 'bold'), text="2", command= lambda : question_label_2.destroy())
+    question_label_2.place(relx=0.12, rely=0.25, relwidth=0.2, relheight=0.1)
+    # 3
+    question_label_3_U = Label(root, bg="blue", fg="black", font=("Courier", 50, 'bold'), text="sike")
+    question_label_3_U.place(relx=0.12, rely=0.4, relwidth=0.2, relheight=0.1)
+    question_label_3 = Button(root, bg="blue", fg="black", font=("Courier", 50, 'bold'), text="3", command= lambda : question_label_3.destroy())
+    question_label_3.place(relx=0.12, rely=0.4, relwidth=0.2, relheight=0.1)
+    # 4
+    question_label_4_U = Label(root, bg="yellow", fg="black", font=("Courier", 50, 'bold'), text="sike")
+    question_label_4_U.place(relx=0.39, rely=0.1, relwidth=0.2, relheight=0.1)
+    question_label_4 = Button(root, bg="yellow", fg="black", font=("Courier", 50, 'bold'), text="4", command= lambda : question_label_4.destroy())
+    question_label_4.place(relx=0.39, rely=0.1, relwidth=0.2, relheight=0.1)
+    # 5
+    question_label_5_U = Label(root, bg="yellow", fg="black", font=("Courier", 50, 'bold'), text="sike")
+    question_label_5_U.place(relx=0.39, rely=0.25, relwidth=0.2, relheight=0.1)
+    question_label_5 = Button(root, bg="yellow", fg="black", font=("Courier", 50, 'bold'), text="5", command= lambda : question_label_5.destroy())
+    question_label_5.place(relx=0.39, rely=0.25, relwidth=0.2, relheight=0.1)
+    # 6
+    question_label_6_U = Label(root, bg="yellow", fg="black", font=("Courier", 50, 'bold'), text="sike")
+    question_label_6_U.place(relx=0.39, rely=0.4, relwidth=0.2, relheight=0.1)
+    question_label_6 = Button(root, bg="yellow", fg="black", font=("Courier", 50, 'bold'), text="6", command= lambda : question_label_6.destroy())
+    question_label_6.place(relx=0.39, rely=0.4, relwidth=0.2, relheight=0.1)
+    # 7
+    question_label_7_U = Label(root, bg="red", fg="black", font=("Courier", 50, 'bold'), text="sike")
+    question_label_7_U.place(relx=0.66, rely=0.1, relwidth=0.2, relheight=0.1)
+    question_label_7 = Button(root, bg="red", fg="black", font=("Courier", 50, 'bold'), text="7", command= lambda : question_label_7.destroy())
+    question_label_7.place(relx=0.66, rely=0.1, relwidth=0.2, relheight=0.1)
+    # 8
+    question_label_8_U = Label(root, bg="red", fg="black", font=("Courier", 50, 'bold'), text="sike")
+    question_label_8_U.place(relx=0.66, rely=0.25, relwidth=0.2, relheight=0.1)
+    question_label_8 = Button(root, bg="red", fg="black", font=("Courier", 50, 'bold'), text="8", command= lambda : question_label_8.destroy())
+    question_label_8.place(relx=0.66, rely=0.25, relwidth=0.2, relheight=0.1)
+    # 9
+    question_label_9_U = Label(root, bg="red", fg="black", font=("Courier", 50, 'bold'), text="sike")
+    question_label_9_U.place(relx=0.66, rely=0.4, relwidth=0.2, relheight=0.1)
+    question_label_9 = Button(root, bg="red", fg="black", font=("Courier", 50, 'bold'), text="9", command= lambda : question_label_9.destroy())
+    question_label_9.place(relx=0.66, rely=0.4, relwidth=0.2, relheight=0.1)
+
     answerbox_1 = Entry(root, bg="white", font=('Courier', 50))
     answerbox_1.place(relx=0.12,rely=0.55,relwidth=0.74,relheight=0.1)
+
     sendtodt = Button(root, text="CHECK",font=('Courier', 50, 'bold'), bg = "blue", fg = "white", command=lambda: check(answerbox_1.get()))
     sendtodt.place(relx=0.425, rely=0.7, relwidth=0.15 , relheight=0.09)
+    if is_pressed('enter'):
+        check(answerbox_1.get())
 
     xbutton = Button(root, bg="red", fg="black", text="X", font=("Courier", 20), command=lambda: sys.exit()).place(relx=0.98, rely=0,relwidth=0.02,relheight=0.03)
     g.collect()
